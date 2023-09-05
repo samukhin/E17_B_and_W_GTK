@@ -11,12 +11,15 @@
 ===============================================================================
     Default color scheme
 ===============================================================================
+
+Тут мы меняем selected_bg_color на серый с оранжевого
+цвет выделения текста
 */
 @define-color bg_color                          #f0f0f0;
 @define-color fg_color                          black;
 @define-color base_color                        white;
 @define-color text_color                        black;
-@define-color selected_bg_color                 #ff7800;
+@define-color selected_bg_color                 gray;
 @define-color selected_fg_color                 black;
 @define-color tooltip_bg_color                  #ffffd2;
 @define-color tooltip_fg_color                  black;
@@ -55,18 +58,22 @@
 ===============================================================================
     Widget colors
 ===============================================================================
-*/
-@define-color button_active_color_1             #ccb79c;
-@define-color button_active_color_2             #e7decc;
-@define-color button_active_color_3             #e1cfb4;
-@define-color button_active_color_4             #ccc3b7;
-@define-color button_active_border_color        #967b54;
 
-@define-color button_hover_color_1              #fcf4ee;
-@define-color button_hover_color_2              #f4d6bf;
-@define-color button_hover_color_3              #e7b893;
-@define-color button_hover_color_4              #f6d9c3;
-@define-color button_hover_border_color         #ce9c6f;
+Тут мы меняем button_..._color с оранжевого на серые
+
+*/
+
+@define-color button_active_color_1             #cccccc;
+@define-color button_active_color_2             #dedede;
+@define-color button_active_color_3             #e1e1e1;
+@define-color button_active_color_4             #cccccc;
+@define-color button_active_border_color        #969696;
+
+@define-color button_hover_color_1              #fcfcfc;
+@define-color button_hover_color_2              #f4f4f4;
+@define-color button_hover_color_3              #e7e7e7;
+@define-color button_hover_color_4              #f6f6f6;
+@define-color button_hover_border_color         #cecece;
 
 @define-color button_insensitive_color_1        #dee0e7;
 @define-color button_insensitive_color_2        #edf0f6;
@@ -95,22 +102,30 @@
 @define-color notebook_tab_color_3              #e2dad2;
 @define-color notebook_tab_color_4              #eae4de;
 
-/* Titlebar buttons */
+/* Titlebar buttons
+Верхний заголовок, в E17 он нам не интересен
+*/
 @define-color button_black_active_color_1       #3d3d3d;
 @define-color button_black_active_color_2       #4d4d4d;
 @define-color button_black_active_color_3       #2d2d2d;
 @define-color button_black_active_color_4       #030303;
 
-/* Scrollbar and Switch */
-@define-color glossy_chocolate_bg_color_1       #c8833c;
-@define-color glossy_chocolate_bg_color_2       #a15e18;
-@define-color glossy_chocolate_bg_color_3       #7b3f00;
-@define-color glossy_chocolate_hover_color_1    #d7924b;
-@define-color glossy_chocolate_hover_color_2    #b06d27;
-@define-color glossy_chocolate_hover_color_3    #8a4e0f;
-@define-color glossy_chocolate_border_color     #884400;
+/* Scrollbar and Switch
+Скроллинг, шоколадный меняем на чёрно-градиентный
+*/
+@define-color glossy_chocolate_bg_color_1       #3d3d3d;
+@define-color glossy_chocolate_bg_color_2       #4d4d4d;
+@define-color glossy_chocolate_bg_color_3       #2d2d2d;
+@define-color glossy_chocolate_hover_color_1    #3d3d3d;
+@define-color glossy_chocolate_hover_color_2    #4d4d4d;
+@define-color glossy_chocolate_hover_color_3    #2d2d2d;
+@define-color glossy_chocolate_border_color     #030303;
 
-/* Toolbar */
+/* Toolbar 
+Панель инструментов, тут добавляется градиент светлый
+Но нам он не нужен
+*/
+/*
 @define-color glossy_bg_color_1                 #fcfcfc;
 @define-color glossy_bg_color_2                 #e7e7e7;
 @define-color glossy_bg_color_3                 #dddbd5;
@@ -125,20 +140,34 @@
 @define-color glossy_insensitive_color_2        #cfcfcf;
 @define-color glossy_insensitive_color_3        #c6c6c6;
 @define-color glossy_insensitive_color_4        #e4e4e4;
-
-/* Menu */
+*/
+/* Menu
+Это меню, которое выползает, когда наводимся на Файл, справка и тд
+По умолчанию там чёрное всё, а нам то не нужно белое и без градиента
+*/
+/*
 @define-color glossy_black_bg_color_1           #a0a0a0;
 @define-color glossy_black_bg_color_2           #444444;
 @define-color glossy_black_bg_color_3           black;
 @define-color glossy_black_bg_color_4           #333333;
+*/
 
-/* Menuitem and Progressbar */
-@define-color glossy_orange_bg_color_1          #f4600b;
-@define-color glossy_orange_bg_color_2          #de5201;
-@define-color glossy_orange_bg_color_3          #bd4501;
-@define-color glossy_orange_bg_color_4          #dc5000;
+/* Menuitem and Progressbar 
+При наведении на меню выше, 
+нам нужно, чтобы выделялось чёрным градиентом
+*/
+@define-color glossy_orange_bg_color_1          #a0a0a0;
+@define-color glossy_orange_bg_color_2          #444444;
+@define-color glossy_orange_bg_color_3          black;
+@define-color glossy_orange_bg_color_4          #333333;
 
-/* Menubar */
+/* Menubar
+Это верхнее меню приложений (Файл, Справка, тд)
+По умолчанию оно там винного цвета и переливается - нам это не нужно
+*/ 
+
+/*
+
 @define-color glossy_wine_bg_color_1            #8b0000;
 @define-color glossy_wine_bg_color_2            #780000;
 @define-color glossy_wine_bg_color_3            #660000;
@@ -153,6 +182,5 @@
 
 @define-color trough_bg_color_1                 #e1d8d2;
 @define-color trough_bg_color_2                 #f6f6f6;
-
+*/
 @import url("gtk-widgets.css");
-@import url("gtk-widgets-assets.css");

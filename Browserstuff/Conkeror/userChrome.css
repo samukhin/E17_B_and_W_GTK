@@ -1,0 +1,33 @@
+\@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* treecol for listheaders like in preferences > appearance and in DOM-inspector; and menulist is for comboboxes like in preferences > main, the show as homepage button */
+menulist, treecol {color: white !important; }
+
+.paneSelector.chromeclass-toolbar  {
+background-image: url('radio.png') !important; 
+}
+
+radio {
+background-image: url('radio.png') !important; 
+color: black !important;
+}
+
+.paneSelector > radio:hover, .paneSelector > radio[selected="true"], .viewSelector > radio:hover, .viewSelector > radio[selected="true"] {
+background-image: url('radio2.png') !important;
+color: white !important; 
+}
+
+button:hover { color: white !important }
+
+/*inputsubmit eg google buttons; select=combobox, rest needed for selectmenus*/
+input[type="button"], input[type="submit"], input[type="reset"], button:hover, select { color: white !important; background: #272727 !important; }
+select:hover > * { color: black !important; background: white !important; }
+select:hover > *:hover { color: white !important; background: #272727 !important; }
+select:hover > *:hover > * { color: black !important; background: white !important; }
+select:hover > *:hover > *:hover { color: white !important; background: #272727 !important; }
+
+/* for sites that have their own button background, which can cause white text on bright background */
+.button, .formbutton { background: black !important }
+
+/* for listheader in contents, like the 'sorry, couldn't restore' dialog */
+button:hover, treecol {color: white !important }

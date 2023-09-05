@@ -1,0 +1,43 @@
+/*
+ * Do not remove the @namespace line -- it's required for correct functioning
+ */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+
+/*for text on buttons in toolbar and bookmarkbar */
+toolbarbutton:hover, .bookmark-item:hover, menubar > menu[_moz-menuactive="true"][open="true"] {
+  color: white !important;
+}
+
+/* treecol for listheaders like in preferences > appearance and in DOM-inspector; and menulist is for comboboxes like in preferences > main, the show as homepage button */
+menulist, treecol {color: white !important }
+
+/* for active tabs in preferences > advanced */
+tab {
+background-image: url('tab-top.png') !important;
+}
+
+tab[selected="true"] { 
+color: white !important; 
+background-image: url('tab-top-active.png') !important; 
+background-color: none !important;
+}
+
+/**/
+
+.paneSelector, .viewSelector {
+background-image: url('radio.png') !important; 
+}
+
+.paneSelector > radio, .viewSelector > radio {
+background-image: url('radio.png') !important; 
+color: black !important;
+}
+
+.paneSelector > radio:hover, .paneSelector > radio[selected="true"], .viewSelector > radio:hover, .viewSelector > radio[selected="true"] {
+background-image: url('radio2.png') !important;
+color: white !important; 
+}
+
+/* button in unplug */
+.menulist-label-box { color: black !important; }

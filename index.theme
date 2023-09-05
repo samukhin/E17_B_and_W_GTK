@@ -1,10 +1,9 @@
-[X-GNOME-Metatheme]
-Name=GlossyBlack
-GtkTheme=GlossyBlack
-MetacityTheme=GlossyBlack
-Comment=Simple and nice
-CursorTheme=DMZ-White
-CursorSize=24
-Encoding=UTF-8
-IconTheme=nuoveXT2
+[Desktop Entry]
+Name=B_and_W-gtk
 Type=X-GNOME-Metatheme
+Comment=by VCoolio
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=B_and_W-gtk
+IconTheme="Magog White"

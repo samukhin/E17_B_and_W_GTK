@@ -1,0 +1,16 @@
+/*inputsubmit eg google buttons; select=combobox, rest needed for selectmenus*/
+input[type="button"], input[type="submit"], input[type="reset"], button:hover, select { 
+color: white !important; 
+background: #272727 !important; 
+}
+select:hover > * { color: black !important; background: white !important; }
+select:hover > *:hover { color: white !important; background: #272727 !important; }
+select:hover > *:hover > * { color: black !important; background: white !important; }
+select:hover > *:hover > *:hover { color: white !important; background: #272727 !important; }
+
+/* for sites that have their own button background, which can cause white text on bright background */
+/* this breaks however buttons where the text is in the image, which is stupid anyway */
+.button, .formbutton { 
+color: white !important;
+background: #272727 !important; }
+

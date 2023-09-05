@@ -1,10 +1,10 @@
 include "scrollblack.rc"
 
-gtk_color_scheme = "fg_color:#000000\nbg_color:#F4F4F4\nbase_color:#FFFFFF\ntext_color:#000000\nselected_bg_color:#a8a8a8\nselected_fg_color:#FFFFFF\ntooltip_bg_color:#F4F4F4\ntooltip_fg_color:#000000\ninsens_fg_color:#b2b2b2\nfg_button_color:#FFFFFF\neven_color:#FFF\nodd_color:#E8E8E8\nselected_base_color:#c6c6c6"
+gtk_color_scheme = "fg_color:#000000\nbg_color:#F4F4F4\nbase_color:#FFFFFF\ntext_color:#000000\nselected_bg_color:#454545\nselected_fg_color:#FFFFFF\ntooltip_bg_color:#F4F4F4\ntooltip_fg_color:#000000\ninsens_fg_color:#b2b2b2\nfg_button_color:#FFFFFF\neven_color:#E0E0E0\nselected_base_color:#c6c6c6"
 
-gtk-icon-sizes = "gtk-button=16,16:gtk-menu=16,16:gtk-small-toolbar=24,24:gtk-large-toolbar=32,32:gtk-dnd=48,48:gtk-dialog=48,48"
+gtk-icon-sizes = "gtk-button=16,16:gtk-menu=16,16:gtk-small-toolbar=24,24:gtk-large-toolbar=32:32:gtk-dnd=48,48:gtk-dialog=48,48"
 
-gtk-font-name = "Verdana 8"
+gtk-menu, gtk-button, gtk-small-toolbar, gtk-large-toolbar, gtk-dnd, gtk-dialog
 
 ################################################################################
 # DEFAULT STYLE
@@ -28,7 +28,6 @@ style "default"
   
   GtkPaned::handle_size                 = 4
   GtkScrollbar::min_slider_length           = 50
-#  GtkScrollbar::fixed_slider_length         = "true"
   GtkCheckButton::indicator_size            = 12
   GtkCheckButton::indicator_spacing         = 3
   GtkMenuBar::internal_padding              = 1
@@ -36,12 +35,6 @@ style "default"
   GtkOptionMenu::indicator_spacing          = { 8, 2, 0, 0 }
   GtkStatusbar::shadow_type                 = GTK_SHADOW_NONE
   GtkSpinButton::shadow_type                = GTK_SHADOW_NONE
-
-  GtkTreeView::odd_row_color 		= shade (0.9, @base_color) #@odd_color #@base_color
-  GtkTreeView::even_row_color 		= @base_color #@even_color
-
-  GtkScrolledWindow::scrollbar_spacing = 0
-  GtkScrolledWindow::scrollbars_within_bevel = 1
 
   xthickness                = 2           
   ythickness                = 2
@@ -65,7 +58,7 @@ style "default"
   bg[INSENSITIVE]   = @base_color
 
   base[NORMAL]      = @base_color
-  base[ACTIVE]      = lighter (@selected_bg_color)
+  base[ACTIVE]      = "#e0e0e0"
   base[PRELIGHT]    = "#000000"
   base[SELECTED]    = @selected_bg_color
   base[INSENSITIVE] = @base_color
@@ -950,9 +943,12 @@ style "list-header"
   base[ACTIVE] = "#242424" # selected items in dropdown menus like midori location bar; also selected items when unfocused
   text[NORMAL] = @fg_color # text on top row in dropdown menus
   text[ACTIVE] = @selected_fg_color # text on top row in dropdown menus when selected / hovered
+  GtkTreeView::odd_row_color 		= @base_color
+  GtkTreeView::even_row_color 		= @even_color
 
   engine "pixmap" 
   {
+
     image
     {
        	 function       	 = BOX
@@ -1725,11 +1721,7 @@ class "GtkLayout"           style "layout"
 widget_class "*Notebook.*HBox*" style "fgwhite" #eg gedit and midori active tab, does NOT break thunar properties, breaks pidgin and little in evolution
 #widget_class "*Notebook.*VBox.*HBox*" style "statusfix" # fix pidgin
 widget_class "*Notebook.*VBox*" style "statusfix" #added to fix kupfer prefs, seems better than above line but who knows what broke
-widget_class "*Notebook.*<GtkNotebook>.GtkLabel" style "fgwhite" #fix screenlets prefs, movie player or totem sidebar tabs
-widget_class "*<GtkFrame>.GtkLabel" style "default" # needs to be below Notebook.*HBox* widget_class
-widget_class "*<GtkFrame>.GtkNotebook.GtkLabel" style "fgwhite" # fixes gstyle
-#widget_class "*Frame.*<GtkNotebook>.*MenuBar*" style "menubar" # fixes gstyle menubar preview - pretty crazy but hey
-
+widget_class "*Frame*" style "default" # needs to be below Notebook.*HBox* widget_class
 
 #----------
 # PANEL
@@ -1759,14 +1751,6 @@ widget_class "*GtkCList*"    style "list-header"
 
 
 widget_class "*GtkButton*"       style "button"
-
-#style "bbutton" = "button"
-#{
-#  fg[NORMAL] = @fg_color
-#}
-#widget_class "*VBox.GtkButton*" style "bbutton" #fixes screenlets-manager left buttons (not g-c-c) but breaks a lot
-#widget_class "*Notebook*GtkButton*" style "button" # recovers some of the breakage
-
 widget_class "*GtkToggleButton*" style "button"
 class "GtkSpinButton"       style "spinbutton"
 widget_class "*GtkSpinButton*"  style "spinbutton"
@@ -1823,12 +1807,10 @@ class "SPColorSlider"       style "unstyle"
 # NEED TO BE AT THE END
 #--------------
 #widget_class "*Statusbar*" style "statusfix" # fixes statusbar in eg gedit, oo.org; breaks gimp stuff, so:
-
 widget_class "*Tool*Button*"       style "toolbuttons"
 widget_class "*Tool*GtkToggleButton" style "toolbuttons"
 widget_class "*Status*Button*"       style "button"
 widget_class "*Status*GtkToggleButton" style "toolbuttons"
-
 #widget_class "*Status*Combo*"       style "combos"
 #widget_class "*Status*Option*"       style "combos"
 
@@ -1848,10 +1830,8 @@ class "GtkRadioButton"           style "checkradiobutton"
 widget_class "*RadioButton*"     style "radiobutton"
 class "*GtkCheckButton"          style "checkradiobutton"
 widget_class "*CheckButton*"     style "checkbutton"
-
 widget_class "*Expander*"       style "expander"
 widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "evofix"
-
 widget_class "*Entry*" style "textblack" # make sure every f-ing entry text is black on white
 
 style "tester"
@@ -1887,5 +1867,3 @@ style "test2"
   text[ACTIVE] = "green"
 }
 
-
-#widget_class "*GSList*Menu*" style "bbutton"

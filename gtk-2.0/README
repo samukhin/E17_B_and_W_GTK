@@ -1,0 +1,78 @@
+This is a theme to match the B_and_W theme in E17 window manager, by VCoolio. You can edit at will, but unless otherwise stated here in newer versions I'm willing to maintain this theme. So file bugs at the comments section of the download site or find me on irc.freenode.net at #ubuntu or #e.
+
+Since this is a theme with black items, things are very delicate. Don't edit gtkrc without giving it thought, or you'll get black text on black background, or white on white. Also the order in which the "widget_class" stuff at the bottom is called is important.
+
+A big problem is apps not sticking to the rules. This is especially true of applications that don't use gtk natively, like vlc, openoffice, firefox etc.
+
+VLC can be fixed by picking a vlc skin. I'm sorry, but it's impossible to fix my theme for vlc since it doesn't look at my theme for backgrounds, only for text colors.
+
+OpenOffice works just fine as far as I can see.
+
+
+
+BETTER LOOK INTO THE BROWSERSTUFF FOLDER INSTEAD OF READING THE FOLLOWING
+For several browsers (firefox and children like seamonkey, swiftweasel, swiftfox; uzbl; midori can be fixed by .css code. Look into the 'Browserstuff' folder for more. There is an example snippet below.
+
+FIREFOX etc
+find the userChrome.css (and for some stuff maybe also the userContent.css) file for example in:
+~/.mozilla/firefox/<blah-code>.default/chrome
+~/.mozilla/firefox-3.5/<blah-code>.default/chrome
+~/.mozilla/seamonkey/<blah-code>.default/chrome
+~/.sw35/<blah-code>.default/chrome  << for swiftweasel 3.5
+
+
+MIDORI
+create a folder ~/.local/share/midori/styles and create a whatever.css file in there
+
+UZBL
+create a /where-ever/whatever.css file and in your uzbl config add a line
+set stylesheet_uri = file:///where-ever/whatever,css
+
+CONKEROR
+create a css file starting with the line
+\@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+and put css code behind it (like userChrome.css files do). Then point conkeror to it with this line in your rc:
+register_user_stylesheet('file:///path/to/file.css');
+
+
+CSS-snippet:
+
+/* menubar text black */
+#toolbar-menubar, menubar > menu {
+  color: black !important;
+}
+
+/* menubar text when clicked white */
+menubar > menu[_moz-menuactive="true"][open="true"] {
+color: white !important;
+}
+
+/* active tab color white */
+tab[selected="true"] {
+  color: white !important;
+}
+
+
+/* fix buttons text color */
+dropdownbutton,
+#dropdownbutton,
+combobutton,
+#combobutton,
+button,
+select,
+menuitem,
+#menuitem,
+#button,
+#attached_file,
+input[type="submit"],
+input[type="button"],
+input[type="file"],
+input[type="reset"],
+button[style="display: inline"] {
+  color: #ffFFff !important;
+}
+
+
+
+
+

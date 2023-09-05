@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=B_and_W_devel
+Type=X-GNOME-Metatheme
+Comment=by Tryxan.  Version 1.2
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=B_and_W
+IconTheme=Oxygen-Refit 2 - Orange Version

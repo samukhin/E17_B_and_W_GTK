@@ -1,0 +1,5 @@
+UZBL
+create a /where-ever/whatever.css file and in your uzbl config add a line
+set stylesheet_uri = file:///where-ever/whatever,css
+
+copy css code from one of the supplied userChrome.css files, without the first line there (the one saying \@namespace url blahblah)

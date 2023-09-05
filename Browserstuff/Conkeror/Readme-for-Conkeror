@@ -1,0 +1,9 @@
+CONKEROR
+create a css file starting with the line
+\@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+and put css code behind it (like userChrome.css files do). Then point conkeror
+to it with this line in your rc:
+register_user_stylesheet('file:///path/to/file.css');
+
+
+or copy the stuff in this folder to some place convenient (everything in the same folder) and call the userChrome.css in Conkeror with the above line.

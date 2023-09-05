@@ -1,0 +1,2 @@
+put the contents of this folder in the chrome folder for your firefox user configs, for firefox-3.7a1pre for example:
+~/.mozilla/firefox/<blah>.default/chrome

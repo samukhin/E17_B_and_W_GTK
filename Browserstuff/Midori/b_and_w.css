@@ -1,0 +1,17 @@
+/* to use with BandW*/
+button,
+select,
+#button {
+  color: #FFFFFF !important;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+color: white !important;
+background-color: #272727 !important;
+padding: 2px;
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px;
+}
+input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+background-color: #454545 !important;
+}

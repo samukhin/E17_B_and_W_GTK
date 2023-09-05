@@ -1,0 +1,5 @@
+Put the contents of this folder in the chrome folder for your swiftweasel user configs, which probably is
+~/.sw35/swiftweasel/<blah>.default/chrome
+
+ISSUES
+in edit > prefs the 'tabs' button has no image when hovered; don't know how to solve

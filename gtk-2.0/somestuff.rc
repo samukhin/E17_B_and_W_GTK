@@ -1,0 +1,108 @@
+################################################################################
+# HANDELS
+################################################################################
+
+style "handlebox"			= "default"
+{
+  engine "pixmap"
+  {
+    image
+    {
+      #function				= SHADOW
+    }
+    image
+    {
+      function				= HANDLE
+      recolorable			= TRUE
+      overlay_file			= "Handles/handle-v.png"
+      overlay_stretch			= FALSE
+      orientation			= VERTICAL
+    }
+    image
+    {
+      function				= HANDLE
+      overlay_file			= "Handles/handle-h.png"
+      overlay_stretch 			= FALSE
+      orientation			= HORIZONTAL
+    }
+  }
+}
+
+################################################################################
+# FLAT [???]
+################################################################################
+
+style "flat" 				= "default"
+{
+  engine "pixmap"
+  {
+    image
+    {
+      function				= SHADOW
+    }
+  }
+}
+
+################################################################################
+# LAYOUT
+################################################################################
+
+style "layout"	= "default"
+{
+  engine "pixmap"
+  {
+   image
+   {
+     function				= SHADOW
+     detail				= "entry"
+     shadow				= IN
+     recolorable			= FALSE
+     file				= "Shadows/text.png"
+     border				= { 1, 1, 1, 1 }
+     stretch				= TRUE
+   }
+    image
+    {
+      function				= BOX
+      detail				= "button"
+      state				= NORMAL
+      file				= "Buttons/button-normal.png"
+      recolorable			= TRUE
+      border				= { 2, 3, 2, 3 }
+      stretch				= TRUE
+    }
+  }
+}
+
+style "unstyle"
+{
+  engine ""
+  {
+  }
+}
+style "SPbutton"
+{
+  engine "pixmap"
+  {
+    image
+    {
+      function				= BOX
+      shadow				= IN
+      recolorable			= TRUE
+      file				= "Shadows/shadow-out.png"
+      border				= { 2, 2, 2, 2 }
+      stretch				= TRUE
+    }
+    image
+    {
+      function				= BOX
+    }
+  }
+}
+
+
+style "metacity-frame"
+{
+  bg[SELECTED]  = "#4A4A4A"
+  fg[SELECTED]  = "#F9F9F9"
+}

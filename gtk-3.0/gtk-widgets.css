@@ -422,24 +422,40 @@ menu
 	border:                         1px solid @border_color_dark;
 	color:                          @base_color;
 }
+
 menuitem,
 toolbutton > button
 {
+	/*Вот тут добавляем color:black, чтобы цвет текста
+    в рамкрывающемся меню по кнопке (размер шрифта и тд) был чёрный (так как фон белый)	*/
 	border:                         1px solid transparent;
 	padding:                        1px;
+    color:                          black;
 }
+
 * > menuitem > label
 {
-	color:                          @base_color;
+	/*Вот тут меняем на color:black с белого, чтобы цвет текста
+    в рамкрывающемся меню по кнопке (Файл, справка) был чёрный (так как фон белый)	*/
+	color:                          black;
+}
+* > menuitem:hover > label
+{
+	/*Вот тут добавляем color:white, чтобы цвет текста (когда мы навели на пункт)
+    в рамкрывающемся меню по кнопке (Файл, справка) был белым (так как фон чёрный будет)	*/
+    color:                          white;
 }
 menuitem:hover
 {
+	/*Вот тут добавляем color:white, чтобы цвет текста (когда мы навели на пункт)
+    в рамкрывающемся меню по кнопке (размер шрифта и тд) был белым (так как фон чёрный будет)	*/
 	background-image:               -gtk-gradient(linear, 0 0, 0 1,
 	                                color-stop(0,   @glossy_orange_bg_color_1),
 	                                color-stop(0.5, @glossy_orange_bg_color_2),
 	                                color-stop(0.5, @glossy_orange_bg_color_3),
 	                                color-stop(1,   @glossy_orange_bg_color_4));
 	border:                         1px solid @selected_bg_color;
+    color:                          white;
 }
 menu menuitem
 {
