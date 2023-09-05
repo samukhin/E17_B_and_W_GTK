@@ -414,11 +414,13 @@ menubar .menuitem
 }
 menu
 {
+	/*
+	Вот тут убираем чёрный градиент в меню по кнопке (Файл, справка) 
 	background-image:               -gtk-gradient(linear, 0 0, 1 0,
 	                                color-stop(0,    @glossy_black_bg_color_1),
 	                                color-stop(0.07, @glossy_black_bg_color_2),
 	                                color-stop(0.07, @glossy_black_bg_color_3),
-	                                color-stop(1,    @glossy_black_bg_color_4));
+	                                color-stop(1,    @glossy_black_bg_color_4));*/
 	border:                         1px solid @border_color_dark;
 	color:                          @base_color;
 }
