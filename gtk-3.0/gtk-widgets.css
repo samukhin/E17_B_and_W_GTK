@@ -303,7 +303,8 @@ decoration
 }
 paned
 {
-	padding:                        6px;
+	/* 6px -> 0px Так как из-за этого headerbar в чёрных рамках */
+	padding:                        0px;
 }
 headerbar
 {
