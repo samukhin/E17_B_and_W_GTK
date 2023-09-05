@@ -1,0 +1,158 @@
+/*
+    Name:        GlossyBlack/gtk-3.0/gtk.css
+    Purpose:     GlossyBlack GTK3 theme
+    Author:      Andrea Zanellato
+    Modified by:
+    Created:     2013/02/03
+    Copyright:   (c) Andrea Zanellato
+    Licence:     GNU General Public License Version 3
+*/
+/*
+===============================================================================
+    Default color scheme
+===============================================================================
+*/
+@define-color bg_color                          #f0f0f0;
+@define-color fg_color                          black;
+@define-color base_color                        white;
+@define-color text_color                        black;
+@define-color selected_bg_color                 #ff7800;
+@define-color selected_fg_color                 black;
+@define-color tooltip_bg_color                  #ffffd2;
+@define-color tooltip_fg_color                  black;
+
+@define-color insensitive_bg_color              #f4f4f2;
+@define-color insensitive_fg_color              #a8a8a8;
+/*
+===============================================================================
+    Misc colors used by GTK+
+===============================================================================
+*/
+@define-color info_fg_color                     rgb( 181, 171, 156 );
+@define-color info_bg_color                     rgb( 252, 252, 189 );
+@define-color warning_fg_color                  rgb( 173, 120, 41 );
+@define-color warning_bg_color                  rgb( 250, 173, 61 );
+@define-color question_fg_color                 rgb( 97, 122, 214 );
+@define-color question_bg_color                 rgb( 138, 173, 212 );
+@define-color error_fg_color                    rgb( 166, 38, 38 );
+@define-color error_bg_color                    rgb( 237, 54, 54 );
+@define-color link_color                        #5590CC;
+@define-color error_color                       #cc0000;
+@define-color combobox_color                    #888;
+/*
+===============================================================================
+    Theme common colors
+===============================================================================
+*/
+@define-color border_color                      #c8c8c8;
+@define-color border_color_bright               #d2d2d2;
+@define-color border_color_dark                 #6c6c6c;
+
+@define-color backdrop_fg_color                 mix( @bg_color, @fg_color, 0.8 );
+@define-color backdrop_selected_bg_color        shade( @bg_color, 0.92 );
+@define-color backdrop_selected_fg_color        @fg_color;
+/*
+===============================================================================
+    Widget colors
+===============================================================================
+*/
+@define-color button_active_color_1             #ccb79c;
+@define-color button_active_color_2             #e7decc;
+@define-color button_active_color_3             #e1cfb4;
+@define-color button_active_color_4             #ccc3b7;
+@define-color button_active_border_color        #967b54;
+
+@define-color button_hover_color_1              #fcf4ee;
+@define-color button_hover_color_2              #f4d6bf;
+@define-color button_hover_color_3              #e7b893;
+@define-color button_hover_color_4              #f6d9c3;
+@define-color button_hover_border_color         #ce9c6f;
+
+@define-color button_insensitive_color_1        #dee0e7;
+@define-color button_insensitive_color_2        #edf0f6;
+@define-color button_insensitive_color_3        #c6ccd5;
+@define-color button_insensitive_color_4        #eaf0f6;
+@define-color button_insensitive_border_color   #c6ccd5;
+
+@define-color button_text_shadow_color          alpha(white, 0.4);
+
+@define-color column_header_bg_color_1          @bg_color;
+@define-color column_header_bg_color_2          #ededed;
+@define-color column_header_bg_color_3          #e1e1e1;
+
+@define-color column_header_hover_color_1       @base_color;
+@define-color column_header_hover_color_2       @bg_color;
+@define-color column_header_hover_color_3       #e4e4e4;
+
+@define-color column_header_border_color        #d2d2d2;
+@define-color column_header_fg_color            #454545;
+
+@define-color inset_light_color                 alpha(white, 0.45);
+@define-color inset_dark_color                  alpha(black, 0.07);
+
+@define-color notebook_tab_color_1              @bg_color;
+@define-color notebook_tab_color_2              #f3efeb;
+@define-color notebook_tab_color_3              #e2dad2;
+@define-color notebook_tab_color_4              #eae4de;
+
+/* Titlebar buttons */
+@define-color button_black_active_color_1       #3d3d3d;
+@define-color button_black_active_color_2       #4d4d4d;
+@define-color button_black_active_color_3       #2d2d2d;
+@define-color button_black_active_color_4       #030303;
+
+/* Scrollbar and Switch */
+@define-color glossy_chocolate_bg_color_1       #c8833c;
+@define-color glossy_chocolate_bg_color_2       #a15e18;
+@define-color glossy_chocolate_bg_color_3       #7b3f00;
+@define-color glossy_chocolate_hover_color_1    #d7924b;
+@define-color glossy_chocolate_hover_color_2    #b06d27;
+@define-color glossy_chocolate_hover_color_3    #8a4e0f;
+@define-color glossy_chocolate_border_color     #884400;
+
+/* Toolbar */
+@define-color glossy_bg_color_1                 #fcfcfc;
+@define-color glossy_bg_color_2                 #e7e7e7;
+@define-color glossy_bg_color_3                 #dddbd5;
+@define-color glossy_bg_color_4                 #f3f3f3;
+
+@define-color glossy_hover_color_1              @bg_color;
+@define-color glossy_hover_color_2              #dbdbdb;
+@define-color glossy_hover_color_3              #cfcfcf;
+@define-color glossy_hover_color_4              #e7e7e7;
+
+@define-color glossy_insensitive_color_1        #eaeaea;
+@define-color glossy_insensitive_color_2        #cfcfcf;
+@define-color glossy_insensitive_color_3        #c6c6c6;
+@define-color glossy_insensitive_color_4        #e4e4e4;
+
+/* Menu */
+@define-color glossy_black_bg_color_1           #a0a0a0;
+@define-color glossy_black_bg_color_2           #444444;
+@define-color glossy_black_bg_color_3           black;
+@define-color glossy_black_bg_color_4           #333333;
+
+/* Menuitem and Progressbar */
+@define-color glossy_orange_bg_color_1          #f4600b;
+@define-color glossy_orange_bg_color_2          #de5201;
+@define-color glossy_orange_bg_color_3          #bd4501;
+@define-color glossy_orange_bg_color_4          #dc5000;
+
+/* Menubar */
+@define-color glossy_wine_bg_color_1            #8b0000;
+@define-color glossy_wine_bg_color_2            #780000;
+@define-color glossy_wine_bg_color_3            #660000;
+@define-color glossy_wine_bg_color_4            #780000;
+
+@define-color glossy_wine_border_top_color      #B40000;
+@define-color glossy_wine_border_bottom_color   #580404;
+@define-color glossy_wine_border_left_color     #8F0000;
+@define-color glossy_wine_border_right_color    #990000;
+
+@define-color tooltip_border_color              #f0f078;
+
+@define-color trough_bg_color_1                 #e1d8d2;
+@define-color trough_bg_color_2                 #f6f6f6;
+
+@import url("gtk-widgets.css");
+@import url("gtk-widgets-assets.css");

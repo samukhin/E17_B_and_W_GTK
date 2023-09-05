@@ -1,0 +1,350 @@
+# =============================================================================
+# Name:        GlossyBlack/gtk-2.0/gtkrc
+# Purpose:     GlossyBlack GTK2 theme
+# Author:      Andrea Zanellato
+# Modified by:
+# Created:     2012/12/01
+# Revision:    $Hash$
+# Copyright:   (c) Andrea Zanellato
+# Licence:     GNU General Public License Version 3
+# =============================================================================
+
+gtk-auto-mnemonics = 1
+gtk_color_scheme   = "fg_color:#000000\nbg_color:#f0f0f0\nbase_color:#ffffff\ntext_color:#000000\nselected_bg_color:#BC4501\nselected_fg_color:#000000\ntooltip_bg_color:#FFFCDB\ntooltip_fg_color:#000000"
+gtk-icon-sizes     = "panel-menu=22,22:gtk-button=16,16"
+
+# =============================================================================
+# Default style
+# =============================================================================
+style "default"
+{
+    xthickness = 1
+    ythickness = 1
+
+    base[ACTIVE]      = "#E1D9D1"
+    base[INSENSITIVE] = "#EBE7E3"
+    base[NORMAL]      = @base_color
+    base[PRELIGHT]    = @base_color
+    base[SELECTED]    = "#9F9E9C"
+
+    bg[ACTIVE]        = "#E1D9D1"
+    bg[INSENSITIVE]   = "#dddbd5"
+    bg[NORMAL]        = @bg_color
+    bg[PRELIGHT]      = "#F0D2B4"
+    bg[SELECTED]      = @selected_bg_color
+
+    fg[ACTIVE]        = "#000000"
+    fg[INSENSITIVE]   = "#B3AFAB"
+    fg[NORMAL]        = @fg_color
+    fg[PRELIGHT]      = "#000000"
+    fg[SELECTED]      = @selected_fg_color
+
+    text[ACTIVE]      = @selected_fg_color
+    text[INSENSITIVE] = "#B3AFAB"
+    text[NORMAL]      = @text_color
+    text[PRELIGHT]    = @selected_fg_color
+    text[SELECTED]    = @selected_fg_color
+
+    GtkCheckButton::indicator_size = 15
+
+    GtkExpander::expander_size     = 13
+
+    GtkMenuBar::internal-padding   = 0
+
+    GtkPaned::handle_size          = 6
+
+    engine "murrine"
+    {
+        border_shades       = { 1.0, 1.0 }
+#       glow_shade          = 2.0
+        gradient_shades     = { 1.2, 1.0, 1.0, 1.2 }
+        highlight_shade     = 1.2
+        lightborder_shade   = 2.0
+        prelight_shade      = 1.2
+        shadow_shades       = { 0.8, 2.2 }
+        text_shade          = 1.0
+        trough_shades       = { 1.0, 1.0 }
+
+        border_colors       = FALSE # { "#aaa", "#000" }
+        contrast            = 0.5
+        focus_color         = "#aaa"
+#       gradient_colors             Used per widget if needed
+        roundness           = 0
+
+        focusstyle          = 1
+        glazestyle          = 0
+        glowstyle           = 3
+        lightborderstyle    = 1
+        reliefstyle         = 3
+#       textstyle           = 1
+
+        animation           = FALSE
+#       colorize_scrollbar  = TRUE
+#       disable_focus       = FALSE
+        rgba                = TRUE
+
+        arrowstyle          = 2
+        cellstyle           = 1
+        comboboxstyle       = 0
+        expanderstyle       = 2
+        handlestyle         = 0
+        listviewstyle       = 2
+        listviewheaderstyle = 2
+        menubarstyle        = 1
+        menustyle           = 1
+        menubaritemstyle    = 0
+        progressbarstyle    = 0
+        scrollbarstyle      = 2
+        separatorstyle      = 1
+        sliderstyle         = 1
+        spinbuttonstyle     = 1
+        stepperstyle        = 2
+        toolbarstyle        = 1
+    }
+}
+
+class "GtkWidget" style "default"
+
+# =============================================================================
+# Misc styles
+# =============================================================================
+style "wide" = "default"
+{
+    xthickness = 2
+    ythickness = 2
+}
+
+style "wider" = "default"
+{
+    xthickness = 3
+    ythickness = 3
+}
+
+# =============================================================================
+# GtkCheckButton
+# =============================================================================
+style "checkbutton" = "default"
+{
+    base[NORMAL] = @base_color
+    bg[NORMAL]   = @bg_color
+    bg[PRELIGHT] = @bg_color
+    bg[SELECTED] = @bg_color
+    text[NORMAL] = @fg_color
+}
+
+class "GtkCheckButton"   style "checkbutton"
+class "GtkCheckMenuItem" style "checkbutton"
+
+# =============================================================================
+# GtkEntry
+# =============================================================================
+class "GtkEntry" style "wider"
+
+# =============================================================================
+# GtkFrame (StaticBox)
+# =============================================================================
+style "frame-title" = "default"
+{
+    fg[NORMAL] = "#777"
+}
+
+widget_class "*.GtkFrame.GtkLabel" style "frame-title"
+
+# =============================================================================
+# GtkMenu
+# =============================================================================
+style "menu" = "wide"
+{
+    bg[NORMAL]   = "#000"
+
+    engine "pixmap"
+    {
+        image
+        {
+            function    = BOX
+            recolorable = TRUE
+            detail      = "menu"
+            file        = "../assets/menu.png"
+            border      = { 29, 6, 6, 6 }
+            stretch     = TRUE
+        }
+    }
+}
+
+class "GtkMenu" style "menu"
+
+# =============================================================================
+# GtkMenuBar
+# =============================================================================
+style "menubar" = "wide"
+{
+    bg[NORMAL]   = "#600"
+    fg[NORMAL]   = @base_color
+}
+
+class "*MenuBar*"                    style "menubar"
+widget_class "*MenuBar.*"            style "menubar"
+widget_class "Nautilus*.GtkMenuBar*" style "menubar"
+
+# =============================================================================
+# GtkMenuItem
+# =============================================================================
+style "menuitem"
+{
+    bg[SELECTED] = @selected_bg_color
+    bg[PRELIGHT] = @selected_bg_color
+    fg[NORMAL]   = @base_color
+    fg[PRELIGHT] = @base_color
+    text[NORMAL] = @base_color
+}
+
+class        "*MenuItem"   style "menuitem"
+widget_class "*MenuItem.*" style "menuitem"
+
+# =============================================================================
+# GtkComboBox
+# =============================================================================
+style "combobox" = "default"
+{
+    text[NORMAL] = "#fff"
+    fg[NORMAL]   = "#fff"
+}
+widget "*.gtk-combobox-popup-menu.*" style "combobox"
+# =============================================================================
+# GtkNotebook
+# =============================================================================
+style "notebook" = "default"
+{
+    bg[NORMAL]      = @bg_color
+    bg[SELECTED]    = "#FFAC6C"
+
+    engine "murrine"
+    {
+        roundness = 3
+    }
+}
+
+class "GtkNotebook"                        style "notebook"
+widget_class "*.GtkNotebook.*.GtkEventBox" style "notebook"
+widget_class "*.GtkNotebook.*.GtkViewport" style "notebook"
+
+# =============================================================================
+# GtkProgressBar
+# =============================================================================
+style "progressbar" = "default"
+{
+    xthickness = 0
+    ythickness = 0
+
+    bg[SELECTED] = @selected_bg_color
+}
+
+class "GtkProgress"    style "progressbar"
+class "GtkProgressBar" style "progressbar"
+
+# =============================================================================
+# GtkRadioButton
+# =============================================================================
+class "GtkRadioButton"   style "checkbutton"
+class "GtkRadioMenuItem" style "checkbutton"
+
+# =============================================================================
+# GtkRange / GtkScrollbar
+# =============================================================================
+style "scrollbar" = "default"
+{
+    bg[SELECTED] = "#7b3f00"
+
+    engine "murrine"
+    {
+        contrast          = 1.0
+        lightborder_shade = 1.0
+        gradient_shades   = { 1.5, 1.2, 1.0, 1.3 }
+    }
+}
+
+class "GtkRange" style "scrollbar"
+# =============================================================================
+# GtkToolTip
+# =============================================================================
+style "tooltips" = "default"
+{
+    xthickness = 6
+    ythickness = 6
+
+    bg[NORMAL]   = @tooltip_bg_color
+    bg[SELECTED] = "#000"
+    fg[NORMAL]   = @tooltip_fg_color
+}
+
+widget "gtk-tooltips" style "tooltips"
+
+# =============================================================================
+# Panel
+# =============================================================================
+style "panel"
+{
+#   text color
+    fg[ACTIVE]      = "#ffffff"
+    fg[NORMAL]      = "#ffffff"
+    fg[PRELIGHT]    = "#ffffff"
+
+#   separator and border backgrounds
+    bg[NORMAL]      = "#2d2d2d"
+
+    bg_pixmap[NORMAL] = "../assets/panel.png"
+}
+
+widget "*Xfce*Panel*" style "panel"
+
+style "panelbutton"
+{
+    fg[ACTIVE]      = "#ffffff"
+    fg[NORMAL]      = "#ffffff"
+    fg[PRELIGHT]    = "#ffffff"
+    fg[SELECTED]    = "#ffffff"
+    fg[INSENSITIVE] = "#ffffff"
+
+    engine "pixmap"
+    {
+        image
+        {
+            function    = BOX
+            recolorable = TRUE
+            state       = NORMAL
+            file        = "../assets/panelbutton-normal.png"
+            border      = { 4, 4, 4, 4 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = BOX
+            recolorable = TRUE
+            state       = PRELIGHT
+            file        = "../assets/panelbutton-prelight.png"
+            border      = { 4, 4, 4, 4 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = BOX
+            recolorable = TRUE
+            state       = ACTIVE
+            file        = "../assets/panelbutton-active.png"
+            border      = { 4, 4, 4, 4 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = BOX
+            recolorable = TRUE
+            state       = INSENSITIVE
+            file        = "../assets/panelbutton-insensitive.png"
+            border      = { 4, 4, 4, 4 }
+            stretch     = TRUE
+        }
+    }
+}
+
+class        "*Xfce*Button*"       style "panelbutton"
+widget_class "*Xfce*Panel*Button*" style "panelbutton"

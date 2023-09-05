@@ -1,0 +1,817 @@
+/*
+	Name:        GlossyBlack/gtk-3.0/gtk-widgets.css
+	Purpose:     GlossyBlack GTK3 theme
+	Author:      Andrea Zanellato
+	Modified by:
+	Created:     2013/02/03
+	Copyright:   (c) Andrea Zanellato
+	Licence:     GNU General Public License Version 3
+*/
+*
+{
+/*
+	engine:                         none;
+*/
+	/* Inherit the color from parent by default */
+	color:                          inherit;
+	border-color:                   transparent;
+	background-color:               transparent;
+	padding:                        0;
+}
+*:disabled
+{
+	color:                          shade(@bg_color, 0.6);
+	text-shadow:                    0px 1px alpha(shade(@bg_color, 1.25), 0.5);
+}
+*:active
+{
+}
+*:active:hover:disabled
+{
+}
+*:active:disabled
+{
+}
+*:hover
+{
+}
+*:hover:disabled
+{
+	background-image:               none;
+}
+*:selected,
+*:selected:focus,
+*:selected:backdrop,
+*:selected:focus:backdrop
+{
+	background-image:               none;
+	background-color:               @selected_bg_color;
+	color:                          @selected_fg_color;
+}
+.background
+{
+	color:                          @fg_color;
+	background-color:               @bg_color;
+}
+
+.background:backdrop
+{
+	text-shadow:                    none;
+	-gtk-icon-shadow:               none;
+}
+.linked > button,
+.linked > button:active,
+.linked > button:backdrop,
+.linked > button:checked,
+.linked > button:hover,
+.linked > combobox > box > button.combo:dir(ltr),
+.linked > combobox > box > button.combo:dir(rtl),
+.linked:not(.vertical) > entry,
+.linked:not(.vertical) > spinbutton:not(.vertical),
+.inline-toolbar button,
+.inline-toolbar button:backdrop,
+toolbar.inline-toolbar toolbutton > button.flat,
+toolbar.inline-toolbar toolbutton:backdrop > button.flat
+{
+	border-radius:                  0;
+	border-right-style:             none;
+}
+.linked > button:first-child,
+.linked:not(.vertical) > combobox:first-child > box > button.combo,
+.linked:not(.vertical) > entry:first-child,
+.linked:not(.vertical) > spinbutton:first-child:not(.vertical),
+combobox.linked button:nth-child(2):dir(rtl),
+.inline-toolbar button:first-child,
+toolbar.inline-toolbar toolbutton:first-child > button.flat,
+toolbar.inline-toolbar toolbutton:backdrop:first-child > button.flat
+{
+	border-top-left-radius:         3px;
+	border-bottom-left-radius:      3px;
+}
+.linked > button:last-child,
+.linked:not(.vertical) > combobox:last-child > box > button.combo,
+.linked:not(.vertical) > entry:last-child,
+.linked:not(.vertical) > spinbutton:last-child:not(.vertical),
+combobox.linked button:nth-child(2):dir(ltr),
+.inline-toolbar button:last-child,
+toolbar.inline-toolbar toolbutton:last-child > button.flat,
+toolbar.inline-toolbar toolbutton:backdrop:last-child > button.flat
+{
+	border-top-right-radius:        3px;
+	border-bottom-right-radius:     3px;
+	border-right-style:             solid;
+}
+.linked > button:only-child,
+.linked:not(.vertical) > combobox:only-child > box > button.combo,
+.linked:not(.vertical) > entry:only-child,
+.linked:not(.vertical) > spinbutton:only-child:not(.vertical),
+.inline-toolbar button:only-child,
+toolbar.inline-toolbar toolbutton:only-child > button.flat,
+toolbar.inline-toolbar toolbutton:backdrop:only-child > button.flat
+{
+	border-radius:                  3px;
+	border-style:                   solid;
+}
+.linked.vertical > button,
+.linked.vertical > button:active,
+.linked.vertical > button:backdrop,
+.linked.vertical > button:checked,
+.linked.vertical > button:hover,
+.linked.vertical > combobox > box > button.combo,
+.linked.vertical > entry,
+.linked.vertical > spinbutton:not(.vertical)
+{
+	border-style:                   solid solid none solid;
+	border-radius:                  0;
+}
+.linked.vertical > button:first-child,
+.linked.vertical > combobox:first-child > box > button.combo,
+.linked.vertical > entry:first-child,
+.linked.vertical > spinbutton:first-child:not(.vertical)
+{
+	border-top-left-radius:         3px;
+	border-top-right-radius:        3px;
+}
+.linked.vertical > button:last-child,
+.linked.vertical > combobox:last-child > box > button.combo,
+.linked.vertical > entry:last-child,
+.linked.vertical > spinbutton:last-child:not(.vertical)
+{
+	border-bottom-left-radius:      3px;
+	border-bottom-right-radius:     3px;
+	border-style:                   solid;
+}
+.linked.vertical > button:only-child,
+.linked.vertical > combobox:only-child > box > button.combo,
+.linked.vertical > entry:only-child,
+.linked.vertical > spinbutton:only-child:not(.vertical)
+{
+	border-radius:                  3px;
+	border-style:                   solid;
+}
+button
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_bg_color_1),
+	                                color-stop(0.5, @glossy_bg_color_2),
+	                                color-stop(0.5, @glossy_bg_color_3),
+	                                color-stop(1,   @glossy_bg_color_4));
+	border:                         1px solid @border_color;
+	padding:                        1px;
+}
+button:hover
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @button_hover_color_1),
+	                                color-stop(0.5, @button_hover_color_2),
+	                                color-stop(0.5, @button_hover_color_3),
+	                                color-stop(1,   @button_hover_color_4));
+	border:                         1px solid @button_hover_border_color;
+}
+button:active,
+scale slider:active
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @button_active_color_1),
+	                                color-stop(0.5, @button_active_color_2),
+	                                color-stop(0.5, @button_active_color_3),
+	                                color-stop(1,   @button_active_color_4));
+	border:                         1px solid @button_active_border_color;
+}
+scale.horizontal slider
+{
+	min-height: 4px;
+	min-width: 14px;
+}
+scale.vertical slider
+{
+	min-height: 14px;
+	min-width:   4px;
+}
+scale.vertical slider:disabled
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                color-stop(0,   @button_insensitive_color_1),
+	                                color-stop(0.5, @button_insensitive_color_2),
+	                                color-stop(0.5, @button_insensitive_color_3),
+	                                color-stop(1,   @button_insensitive_color_4));
+	border:                         1px solid @button_insensitive_border_color;
+}
+check,                       radio,
+check:backdrop,              radio:backdrop,
+check:hover,                 radio:hover,
+check row:selected:backdrop, radio row:selected:backdrop,
+view.cell.check,             view.cell.radio,
+view.cell.check:backdrop,    view.cell.radio:backdrop
+{
+	background: linear-gradient(to bottom right, #949ea8 25%, #eff2f3 75%);
+	border:     1px solid #e2ebf0;
+	box-shadow: 0 0 0 1px #aebdcf;
+	color:      black;
+	min-height: 9px;
+	min-width:  9px;
+	margin:     3px;
+}
+radio,
+radio:backdrop,
+radio:hover,
+radio row:selected:backdrop,
+view.cell.radio,
+view.cell.radio:backdrop
+{
+	border-radius: 50%;
+}
+menu check:disabled,
+menu radio:disabled
+{
+	color:                          @insensitive_fg_color;
+}
+header button
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @column_header_bg_color_1),
+	                                color-stop(0.7, @column_header_bg_color_2),
+	                                color-stop(1,   @column_header_bg_color_3));
+	border:                         0 solid transparent;
+	border-bottom:                  1px solid @column_header_border_color;
+	border-right:                   1px solid @column_header_border_color;
+	color:                          @column_header_fg_color;
+}
+header button:hover,
+header button:active
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @column_header_hover_color_1),
+	                                color-stop(0.7, @column_header_hover_color_2),
+	                                color-stop(1,   @column_header_hover_color_3));
+	border:                         0 solid transparent;
+	border-bottom:                  1px solid @column_header_border_color;
+	border-right:                   1px solid @column_header_border_color;
+	color:                          @fg_color;
+}
+header button:disabled
+{
+	background-color:               @insensitive_bg_color;
+}
+* > arrow
+{
+	min-height:                     16px;
+	min-width:                      16px;
+}
+entry
+{
+	color:                          @fg_color;
+	background-color:               @base_color;
+	border:                         1px solid @border_color;
+	padding:                        3px;
+}
+expander arrow
+{
+	-gtk-icon-source:               -gtk-icontheme("pan-end-symbolic");
+}
+combobox arrow,
+expander arrow:checked
+{
+	-gtk-icon-source:               -gtk-icontheme("pan-down-symbolic");
+}
+frame
+{
+	border:                         1px solid @border_color;
+	border-radius:                  3px;
+}
+label
+{
+	color:                          @fg_color;
+}
+label selection,
+entry selection
+{
+	background-color:               @selected_bg_color;
+	color:                          @selected_fg_color;
+}
+list row
+{
+	padding:                        2px;
+}
+calendar, dialog, window, scrolledwindow
+{
+	border:                         1px solid @border_color;
+}
+decoration
+{
+	margin:                         1px;
+}
+paned
+{
+	padding:                        6px;
+}
+headerbar
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_black_bg_color_1),
+	                                color-stop(0.5, @glossy_black_bg_color_2),
+	                                color-stop(0.5, @glossy_black_bg_color_3),
+	                                color-stop(1,   @glossy_black_bg_color_4));
+/*
+	TODO: No transparence without compositor
+
+	border-radius:                  7px 7px 0 0;
+*/
+	border-style:                   none;
+	padding:                        3px;
+	font-weight:                    bold;
+	text-shadow:                    1px 1px @text_color;
+}
+headerbar button,
+headerbar button:disabled
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_black_bg_color_1),
+	                                color-stop(0.5, @glossy_black_bg_color_2),
+	                                color-stop(0.5, @glossy_black_bg_color_3),
+	                                color-stop(1,   @glossy_black_bg_color_4));
+	border:                         1px solid black;
+	color:                          white;
+}
+headerbar label,
+headerbar > button > label
+{
+	color:                          white;
+}
+.titlebar > button,
+.titlebutton
+{
+	padding:                        1px;
+	border-radius:                  3px;
+}
+.titlebutton.close
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   #CD8181),
+	                                color-stop(0.5, #B84F4F),
+	                                color-stop(0.5, #AB3636),
+	                                color-stop(1,   #A31F1F));
+}
+.titlebutton.close:hover
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   #C77474),
+	                                color-stop(0.5, #C26767),
+	                                color-stop(0.5, #BD5B5B),
+	                                color-stop(1,   #B74C4C));
+}
+.titlebutton.close:active
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   #BD5A5A),
+	                                color-stop(0.5, #B74C4C),
+	                                color-stop(0.5, #AB3535),
+	                                color-stop(1,   #A21F1F));
+}
+headerbar button:hover,
+.titlebar button:hover
+{
+	background-image:               url("../assets/panelbutton-prelight.png");
+	background-repeat:              no-repeat;
+	background-size:                100% 100%;
+	border-color:                   black;
+}
+headerbar button:active,
+.titlebar button:active,
+headerbar button:checked,
+.titlebar button:checked
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,    @button_black_active_color_1),
+	                                color-stop(0.25, @button_black_active_color_2),
+	                                color-stop(0.5,  @button_black_active_color_3),
+	                                color-stop(0.5,  @button_black_active_color_4));
+	background-repeat:              no-repeat;
+	border-color:                   #1f1f1f;
+}
+.maximized headerbar,
+.maximized titlebar
+{
+	border-radius: 0;
+}
+menubar
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_wine_bg_color_1),
+	                                color-stop(0.5, @glossy_wine_bg_color_2),
+	                                color-stop(0.5, @glossy_wine_bg_color_3),
+	                                color-stop(1,   @glossy_wine_bg_color_4));
+	border-top:                     1px solid @glossy_wine_border_top_color;
+	border-bottom:                  1px solid @glossy_wine_border_bottom_color;
+	border-left:                    1px solid @glossy_wine_border_left_color;
+	border-right:                   1px solid @glossy_wine_border_right_color;
+	padding:                        2px 0px 2px;
+	color:                          @base_color;
+}
+menubar .menuitem
+{
+	padding:                        1px 6px;
+}
+menu
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                color-stop(0,    @glossy_black_bg_color_1),
+	                                color-stop(0.07, @glossy_black_bg_color_2),
+	                                color-stop(0.07, @glossy_black_bg_color_3),
+	                                color-stop(1,    @glossy_black_bg_color_4));
+	border:                         1px solid @border_color_dark;
+	color:                          @base_color;
+}
+menuitem,
+toolbutton > button
+{
+	border:                         1px solid transparent;
+	padding:                        1px;
+}
+* > menuitem > label
+{
+	color:                          @base_color;
+}
+menuitem:hover
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_orange_bg_color_1),
+	                                color-stop(0.5, @glossy_orange_bg_color_2),
+	                                color-stop(0.5, @glossy_orange_bg_color_3),
+	                                color-stop(1,   @glossy_orange_bg_color_4));
+	border:                         1px solid @selected_bg_color;
+}
+menu menuitem
+{
+	border:                         1px;
+	padding:                        2px;
+}
+notebook > stack > box
+{
+	border-width:                   1px;
+	padding:                        2px;
+}
+notebook,
+notebook > header tabs > tab
+{
+	border-color:                   @border_color;
+	border-radius:                  3px;
+	border-style:                   solid;
+}
+notebook > header tabs > tab
+{
+	padding:                        2px;
+}
+notebook > header.top > tabs > tab
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @notebook_tab_color_1),
+	                                color-stop(0.5, @notebook_tab_color_2),
+	                                color-stop(0.5, @notebook_tab_color_3),
+	                                color-stop(1,   @notebook_tab_color_4));
+	border-radius:                  3px 3px 0 0;
+	border-width:                   1px 1px 0 1px;
+}
+notebook > header.bottom > tabs > tab
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @notebook_tab_color_4),
+	                                color-stop(0.5, @notebook_tab_color_3),
+	                                color-stop(0.5, @notebook_tab_color_2),
+	                                color-stop(1,   @notebook_tab_color_1));
+	border-radius:                  0 0 3px 3px;
+	border-width:                   0 1px 1px 1px;
+}
+notebook > header.left > tabs > tab
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                color-stop(0,   @notebook_tab_color_1),
+	                                color-stop(0.5, @notebook_tab_color_2),
+	                                color-stop(0.5, @notebook_tab_color_3),
+	                                color-stop(1,   @notebook_tab_color_4));
+	border-radius:                  3px 0 0 3px;
+	border-width:                   1px 0 1px 1px;
+}
+notebook > header.right > tabs > tab
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                color-stop(0,   @notebook_tab_color_4),
+	                                color-stop(0.5, @notebook_tab_color_3),
+	                                color-stop(0.5, @notebook_tab_color_2),
+	                                color-stop(1,   @notebook_tab_color_1));
+	border-radius:                  0 3px 3px 0;
+	border-width:                   1px 1px 1px 0;
+}
+notebook > header.top > tabs > tab:checked
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                              color-stop(0,   @base_color),
+	                                              color-stop(0.5, @base_color),
+	                                              color-stop(0.5, @bg_color));
+	padding:                        3px 2px 2px 2px;
+    border-bottom-color:            transparent;
+}
+notebook > header.bottom > tabs > tab:checked
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                              color-stop(0,   @bg_color),
+	                                              color-stop(0.5, @bg_color),
+	                                              color-stop(0.5, @base_color));
+	padding:                        2px 2px 3px 2px;
+}
+notebook > header.left > tabs > tab:checked
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                              color-stop(0,   @base_color),
+	                                              color-stop(0.5, @base_color),
+	                                              color-stop(0.5, @bg_color));
+	padding:                        2px 2px 2px 3px;
+}
+notebook > header.right > tabs > tab:checked
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                              color-stop(0,   @bg_color),
+	                                              color-stop(0.5, @bg_color),
+	                                              color-stop(0.5, @base_color));
+	padding:                        2px 3px 2px 2px;
+}
+notebook > header tabs > tab button,
+notebook > header tabs > tab button:hover,
+notebook > header tabs > tab button:active
+{
+	border:                         none;
+	background-image:               none;
+}
+pane-separator,
+separator:backdrop
+{
+	color:                          @fg_color;
+}
+levelbar block
+{
+	margin: 1px;
+}
+
+levelbar trough
+{
+	padding: 1px;
+}
+levelbar.horizontal    trough,
+progressbar.horizontal progress,
+progressbar.horizontal trough
+{
+	min-height:                     12px;
+}
+levelbar.vertical    trough,
+progressbar.vertical progress,
+progressbar.vertical trough
+{
+	min-width:                      12px;
+}
+levelbar.horizontal block,
+progressbar.horizontal progress
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_orange_bg_color_1),
+	                                color-stop(0.5, @glossy_orange_bg_color_2),
+	                                color-stop(0.5, @glossy_orange_bg_color_3),
+	                                color-stop(1,   @glossy_orange_bg_color_4));
+	border:                         1px solid @glossy_chocolate_border_color;
+}
+levelbar.vertical block,
+progressbar.vertical progress
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                color-stop(0,   @glossy_orange_bg_color_1),
+	                                color-stop(0.5, @glossy_orange_bg_color_2),
+	                                color-stop(0.5, @glossy_orange_bg_color_3),
+	                                color-stop(1,   @glossy_orange_bg_color_4));
+}
+levelbar block.empty
+{
+	border:                         1px solid @border_color;
+}
+levelbar.horizontal block.empty
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                              color-stop(0,   @base_color),
+	                                              color-stop(0.5, @base_color),
+	                                              color-stop(0.5, @bg_color));
+}
+levelbar.vertical block.empty
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                              color-stop(0,   @base_color),
+	                                              color-stop(0.5, @base_color),
+	                                              color-stop(0.5, @bg_color));
+}
+popover.background
+{
+	padding:                        2px;
+	border-radius:                  5px;
+	box-shadow:                     0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.csd popover.background,
+popover.background
+{
+	background-color:               @tooltip_bg_color;
+	color:                          @tooltip_fg_color;
+	border:                         1px solid @tooltip_border_color;
+}
+popover.background:backdrop
+{
+	box-shadow:                     none;
+}
+popover.background > list,
+popover.background > .view,
+popover.background > iconview,
+popover.background > toolbar
+{
+	border-style:                   none;
+	background-color:               transparent;
+}
+.csd popover.background.touch-selection,
+.csd popover.background.magnifier,
+popover.background.touch-selection,
+popover.background.magnifier
+{
+	border:                         1px solid rgba(255, 255, 255, 0.1);
+}
+popover.background separator
+{
+	margin:                         3px;
+}
+popover.background list separator
+{
+	margin:                         0px;
+}
+scale slider,
+scrollbar.horizontal slider,
+switch slider
+{
+	background-image:       -gtk-gradient( linear, 0 0, 0 1,
+	                        color-stop( 0,   @glossy_chocolate_bg_color_1 ),
+	                        color-stop( 0.5, @glossy_chocolate_bg_color_2 ),
+	                        color-stop( 0.5, @glossy_chocolate_bg_color_3 ),
+	                        color-stop( 1,   @glossy_chocolate_bg_color_2 ) );
+}
+scale slider:hover,
+scrollbar.horizontal slider:hover,
+switch:hover slider
+{
+	background-image:       -gtk-gradient( linear, 0 0, 0 1,
+	                        color-stop( 0,   @glossy_chocolate_hover_color_1 ),
+	                        color-stop( 0.5, @glossy_chocolate_hover_color_2 ),
+	                        color-stop( 0.5, @glossy_chocolate_hover_color_3 ),
+	                        color-stop( 1,   @glossy_chocolate_hover_color_2 ) );
+}
+scale.vertical slider,
+scrollbar.vertical slider
+{
+	background-image:       -gtk-gradient( linear, 0 0, 1 0,
+	                        color-stop( 0,   @glossy_chocolate_bg_color_1 ),
+	                        color-stop( 0.5, @glossy_chocolate_bg_color_2 ),
+	                        color-stop( 0.5, @glossy_chocolate_bg_color_3 ),
+	                        color-stop( 1,   @glossy_chocolate_bg_color_2 ) );
+}
+scale.vertical slider:hover,
+scrollbar.vertical slider:hover
+{
+	background-image:       -gtk-gradient( linear, 0 0, 1 0,
+	                        color-stop( 0,   @glossy_chocolate_hover_color_1 ),
+	                        color-stop( 0.5, @glossy_chocolate_hover_color_2 ),
+	                        color-stop( 0.5, @glossy_chocolate_hover_color_3 ),
+	                        color-stop( 1,   @glossy_chocolate_hover_color_2 ) );
+}
+separator
+{
+	color:                          @border_color_dark;
+}
+sidebar
+{
+	border:                         1px solid @border_color;
+}
+sidebar,
+sidebar.view,
+sidebar .view
+{
+	background-color:               @base_color;
+}
+slider
+{
+	border-radius:                  3px;
+	padding:                        3px;
+	border:                         1px solid @glossy_chocolate_border_color;
+}
+@keyframes spin
+{
+	to { -gtk-icon-transform:       rotate(1turn); }
+}
+spinner
+{
+	background:                     none;
+	opacity:                        0;
+}
+spinner:checked
+{
+	opacity:                        1;
+	animation:                      spin 1s linear infinite; }
+
+spinner:checked:disabled
+{
+	opacity:                        0.5;
+}
+switch
+{
+	border:                         1px solid @border_color;
+}
+switch slider
+{
+	min-height:                     8px;
+	min-width:                     16px;
+	margin:                         2px;
+}
+toolbar
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_bg_color_1),
+	                                color-stop(0.5, @glossy_bg_color_2),
+	                                color-stop(0.5, @glossy_bg_color_3),
+	                                color-stop(1,   @glossy_bg_color_4));
+	border-style:                   none;
+	padding:                        2px;
+}
+toolbutton > button:active,
+toolbutton > button:hover:active
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_hover_color_1),
+	                                color-stop(0.5, @glossy_hover_color_2),
+	                                color-stop(0.5, @glossy_hover_color_3),
+	                                color-stop(1,   @glossy_hover_color_4));
+}
+toolbutton > button:hover
+{
+	background:                     transparent;
+	border:                         1px solid @border_color_bright;
+}
+toolbutton > button:disabled
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @glossy_insensitive_color_1),
+	                                color-stop(0.5, @glossy_insensitive_color_2),
+	                                color-stop(0.5, @glossy_insensitive_color_3),
+	                                color-stop(1,   @glossy_insensitive_color_4));
+	border-color:                   transparent;
+}
+tooltip
+{
+	background-color:               @tooltip_bg_color;
+	color:                          @tooltip_fg_color;
+	border:                         1px solid @tooltip_border_color;
+	padding:                        3px;
+}
+calendar,
+list,
+textview,
+treeview
+{
+	background-color:               @base_color;
+}
+trough
+{
+	border:                         1px solid @border_color;
+}
+progressbar.horizontal trough,
+scale.horizontal       trough,
+scrollbar.horizontal   trough,
+switch
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0, @trough_bg_color_1),
+	                                color-stop(1, @trough_bg_color_2));
+}
+progressbar.vertical trough,
+scale.vertical       trough,
+scrollbar.vertical   trough
+{
+	background-image:               -gtk-gradient(linear, 0 0, 1 0,
+	                                color-stop(0, @trough_bg_color_1),
+	                                color-stop(1, @trough_bg_color_2));
+}
+view
+{
+	background-color:               @base_color;
+	color:                          @text_color;
+}
+button:disabled,
+scale slider:disabled,
+switch slider:disabled
+{
+	background-image:               -gtk-gradient(linear, 0 0, 0 1,
+	                                color-stop(0,   @button_insensitive_color_1),
+	                                color-stop(0.5, @button_insensitive_color_2),
+	                                color-stop(0.5, @button_insensitive_color_3),
+	                                color-stop(1,   @button_insensitive_color_4));
+	border:                         1px solid @button_insensitive_border_color;
+}
