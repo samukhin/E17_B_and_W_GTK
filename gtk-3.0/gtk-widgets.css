@@ -344,6 +344,8 @@ headerbar > button > label
 	padding:                        1px;
 	border-radius:                  3px;
 }
+/*
+Вот тут удаляем красную кнопку закрытия, она станет просто чёрной, как свернуть и развернуть
 .titlebutton.close
 {
 	background-image:               -gtk-gradient(linear, 0 0, 0 1,
@@ -368,6 +370,7 @@ headerbar > button > label
 	                                color-stop(0.5, #AB3535),
 	                                color-stop(1,   #A21F1F));
 }
+*/
 headerbar button:hover,
 .titlebar button:hover
 {
