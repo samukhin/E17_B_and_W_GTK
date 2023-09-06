@@ -299,7 +299,8 @@ calendar, dialog, window, scrolledwindow
 }
 decoration
 {
-	margin:                         1px;
+	/* 1px -> 0px Убрать пиксельную обводку чёрным цветом вокруг окна */
+	margin:                         0px;
 }
 paned
 {
